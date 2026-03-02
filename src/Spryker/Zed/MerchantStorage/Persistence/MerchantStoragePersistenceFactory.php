@@ -18,17 +18,11 @@ use Spryker\Zed\MerchantStorage\Persistence\Mapper\MerchantStorageMapper;
  */
 class MerchantStoragePersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Orm\Zed\MerchantStorage\Persistence\SpyMerchantStorageQuery
-     */
     public function createMerchantStorageQuery(): SpyMerchantStorageQuery
     {
         return SpyMerchantStorageQuery::create();
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantStorage\Persistence\Mapper\MerchantStorageMapper
-     */
     public function createMerchantStorageMapper(): MerchantStorageMapper
     {
         return new MerchantStorageMapper();

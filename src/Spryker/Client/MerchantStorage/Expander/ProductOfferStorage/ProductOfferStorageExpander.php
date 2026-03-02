@@ -18,19 +18,11 @@ class ProductOfferStorageExpander implements ProductOfferStorageExpanderInterfac
      */
     protected $merchantStorageReader;
 
-    /**
-     * @param \Spryker\Client\MerchantStorage\Storage\MerchantStorageReaderInterface $merchantStorageReader
-     */
     public function __construct(MerchantStorageReaderInterface $merchantStorageReader)
     {
         $this->merchantStorageReader = $merchantStorageReader;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductOfferStorageTransfer $productOfferStorageTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductOfferStorageTransfer
-     */
     public function expand(ProductOfferStorageTransfer $productOfferStorageTransfer): ProductOfferStorageTransfer
     {
         if (!$productOfferStorageTransfer->getMerchantReference()) {

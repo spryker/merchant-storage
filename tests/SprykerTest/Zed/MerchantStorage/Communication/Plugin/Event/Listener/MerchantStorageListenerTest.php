@@ -56,9 +56,6 @@ class MerchantStorageListenerTest extends Unit
      */
     protected const MERCHANT_STATUS_APPROVED = 'approved';
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -75,9 +72,6 @@ class MerchantStorageListenerTest extends Unit
         ]);
     }
 
-    /**
-     * @return void
-     */
     public function testMerchantPublishStorageListenerStoreData(): void
     {
         // Arrange
@@ -103,9 +97,6 @@ class MerchantStorageListenerTest extends Unit
         $this->assertArrayHasKey('id_merchant', $merchantStorageEntity->getData());
     }
 
-    /**
-     * @return void
-     */
     public function testMerchantPublishStorageListenerDeleteData(): void
     {
         // Arrange
@@ -154,9 +145,6 @@ class MerchantStorageListenerTest extends Unit
         $this->assertArrayHasKey('id_merchant', $merchantStorageEntities[0]->getData());
     }
 
-    /**
-     * @return \Spryker\Client\StoreExtension\Dependency\Plugin\StoreExpanderPluginInterface
-     */
     protected function createStoreStorageStoreExpanderPluginMock(): StoreExpanderPluginInterface
     {
         $storeStorageStoreExpanderPluginMock = $this->createMock(StoreExpanderPluginInterface::class);

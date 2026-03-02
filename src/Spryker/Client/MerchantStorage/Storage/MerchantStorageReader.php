@@ -54,13 +54,6 @@ class MerchantStorageReader implements MerchantStorageReaderInterface
      */
     protected $storeClient;
 
-    /**
-     * @param \Spryker\Client\MerchantStorage\Mapper\MerchantStorageMapperInterface $merchantStorageMapper
-     * @param \Spryker\Client\MerchantStorage\Dependency\Service\MerchantStorageToSynchronizationServiceInterface $synchronizationService
-     * @param \Spryker\Client\MerchantStorage\Dependency\Client\MerchantStorageToStorageClientInterface $storageClient
-     * @param \Spryker\Client\MerchantStorage\Dependency\Service\MerchantStorageToUtilEncodingServiceInterface $utilEncodingService
-     * @param \Spryker\Client\MerchantStorage\Dependency\Client\MerchantStorageToStoreClientInterface $storeClient
-     */
     public function __construct(
         MerchantStorageMapperInterface $merchantStorageMapper,
         MerchantStorageToSynchronizationServiceInterface $synchronizationService,
@@ -75,11 +68,6 @@ class MerchantStorageReader implements MerchantStorageReaderInterface
         $this->storeClient = $storeClient;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantStorageCriteriaTransfer $merchantStorageCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantStorageTransfer|null
-     */
     public function findOne(MerchantStorageCriteriaTransfer $merchantStorageCriteriaTransfer): ?MerchantStorageTransfer
     {
         $merchantReference = $this->getFirstElementOfArray($merchantStorageCriteriaTransfer->getMerchantReferences());
@@ -175,11 +163,6 @@ class MerchantStorageReader implements MerchantStorageReaderInterface
         return $merchantIds;
     }
 
-    /**
-     * @param string $merchantReference
-     *
-     * @return int|null
-     */
     protected function findMerchantIdByMerchantReference(string $merchantReference): ?int
     {
         $merchantId = null;
@@ -196,11 +179,6 @@ class MerchantStorageReader implements MerchantStorageReaderInterface
         return $merchantId;
     }
 
-    /**
-     * @param string $reference
-     *
-     * @return string
-     */
     protected function generateKey(string $reference): string
     {
         $synchronizationDataTransfer = new SynchronizationDataTransfer();

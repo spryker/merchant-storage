@@ -113,12 +113,6 @@ class MerchantSynchronizationDataPlugin extends AbstractPlugin implements Synchr
         return $this->getFactory()->getConfig()->getMerchantSynchronizationPoolName();
     }
 
-    /**
-     * @param int $offset
-     * @param int $limit
-     *
-     * @return \Generated\Shared\Transfer\FilterTransfer
-     */
     protected function createFilterTransfer(int $offset, int $limit): FilterTransfer
     {
         return (new FilterTransfer())

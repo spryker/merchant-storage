@@ -55,17 +55,11 @@ class MerchantStorageCommunicationTester extends Actor
             ->find();
     }
 
-    /**
-     * @return \Orm\Zed\MerchantStorage\Persistence\SpyMerchantStorageQuery
-     */
     protected function getMerchantStorageQuery(): SpyMerchantStorageQuery
     {
         return SpyMerchantStorageQuery::create();
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\StoreRelationTransfer
-     */
     public function createStoreRelationTransfer(): StoreRelationTransfer
     {
         $storeTransfer = $this->haveStore([StoreTransfer::NAME => 'DE']);

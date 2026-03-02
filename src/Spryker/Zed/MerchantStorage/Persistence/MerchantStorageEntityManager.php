@@ -16,12 +16,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractEntityManager;
  */
 class MerchantStorageEntityManager extends AbstractEntityManager implements MerchantStorageEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\MerchantStorageTransfer $merchantStorageTransfer
-     * @param \Generated\Shared\Transfer\StoreTransfer $storeTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantStorageTransfer
-     */
     public function saveMerchantStorage(MerchantStorageTransfer $merchantStorageTransfer, StoreTransfer $storeTransfer): MerchantStorageTransfer
     {
         $merchantStorageEntity = $this->getFactory()
@@ -39,12 +33,6 @@ class MerchantStorageEntityManager extends AbstractEntityManager implements Merc
             ->mapMerchantStorageEntityToMerchantStorageTransfer($merchantStorageEntity, new MerchantStorageTransfer());
     }
 
-    /**
-     * @param int $idMerchant
-     * @param string $storeName
-     *
-     * @return void
-     */
     public function deleteMerchantStorage(int $idMerchant, string $storeName): void
     {
         /** @var \Propel\Runtime\Collection\ObjectCollection $merchantStorageCollection */

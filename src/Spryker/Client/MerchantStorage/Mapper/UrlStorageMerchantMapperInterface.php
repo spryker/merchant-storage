@@ -12,10 +12,5 @@ use Generated\Shared\Transfer\UrlStorageTransfer;
 
 interface UrlStorageMerchantMapperInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\UrlStorageTransfer $urlStorageTransfer
-     *
-     * @return \Generated\Shared\Transfer\UrlStorageResourceMapTransfer
-     */
     public function mapUrlStorageTransferToUrlStorageResourceMapTransfer(UrlStorageTransfer $urlStorageTransfer): UrlStorageResourceMapTransfer;
 }

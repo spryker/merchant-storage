@@ -23,9 +23,6 @@ use Spryker\Client\MerchantStorage\Storage\MerchantStorageReaderInterface;
 
 class MerchantStorageFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Client\MerchantStorage\Storage\MerchantStorageReaderInterface
-     */
     public function createMerchantStorageReader(): MerchantStorageReaderInterface
     {
         return new MerchantStorageReader(
@@ -37,17 +34,11 @@ class MerchantStorageFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\MerchantStorage\Mapper\MerchantStorageMapperInterface
-     */
     public function createMerchantStorageMapper(): MerchantStorageMapperInterface
     {
         return new MerchantStorageMapper();
     }
 
-    /**
-     * @return \Spryker\Client\MerchantStorage\Mapper\UrlStorageMerchantMapperInterface
-     */
     public function createUrlStorageMerchantMapper(): UrlStorageMerchantMapperInterface
     {
         return new UrlStorageMerchantMapper(
@@ -57,9 +48,6 @@ class MerchantStorageFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\MerchantStorage\Expander\ProductOfferStorage\ProductOfferStorageExpanderInterface
-     */
     public function createProductOfferStorageExpander(): ProductOfferStorageExpanderInterface
     {
         return new ProductOfferStorageExpander(
@@ -67,33 +55,21 @@ class MerchantStorageFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\MerchantStorage\Dependency\Service\MerchantStorageToSynchronizationServiceInterface
-     */
     public function getSynchronizationService(): MerchantStorageToSynchronizationServiceInterface
     {
         return $this->getProvidedDependency(MerchantStorageDependencyProvider::SERVICE_SYNCHRONIZATION);
     }
 
-    /**
-     * @return \Spryker\Client\MerchantStorage\Dependency\Client\MerchantStorageToStorageClientInterface
-     */
     public function getStorageClient(): MerchantStorageToStorageClientInterface
     {
         return $this->getProvidedDependency(MerchantStorageDependencyProvider::CLIENT_STORAGE);
     }
 
-    /**
-     * @return \Spryker\Client\MerchantStorage\Dependency\Service\MerchantStorageToUtilEncodingServiceInterface
-     */
     public function getUtilEncodingService(): MerchantStorageToUtilEncodingServiceInterface
     {
         return $this->getProvidedDependency(MerchantStorageDependencyProvider::SERVICE_UTIL_ENCODING);
     }
 
-    /**
-     * @return \Spryker\Client\MerchantStorage\Dependency\Client\MerchantStorageToStoreClientInterface
-     */
     public function getStoreClient(): MerchantStorageToStoreClientInterface
     {
         return $this->getProvidedDependency(MerchantStorageDependencyProvider::CLIENT_STORE);

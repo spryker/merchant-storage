@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\ProductOfferCollectionTransfer;
 
 interface MerchantProductOfferStorageFilterInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ProductOfferCollectionTransfer $productOfferCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductOfferCollectionTransfer
-     */
     public function filterProductOfferStorages(ProductOfferCollectionTransfer $productOfferCollectionTransfer): ProductOfferCollectionTransfer;
 }

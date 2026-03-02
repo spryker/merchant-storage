@@ -58,13 +58,6 @@ class MerchantStorageWriter implements MerchantStorageWriterInterface
      */
     protected $merchantStorageRepository;
 
-    /**
-     * @param \Spryker\Zed\MerchantStorage\Dependency\Facade\MerchantStorageToEventBehaviorFacadeInterface $eventBehaviorFacade
-     * @param \Spryker\Zed\MerchantStorage\Dependency\Facade\MerchantStorageToMerchantFacadeInterface $merchantFacade
-     * @param \Spryker\Zed\MerchantStorage\Dependency\Facade\MerchantStorageToStoreFacadeInterface $storeFacade
-     * @param \Spryker\Zed\MerchantStorage\Persistence\MerchantStorageEntityManagerInterface $merchantStorageEntityManager
-     * @param \Spryker\Zed\MerchantStorage\Persistence\MerchantStorageRepositoryInterface $merchantStorageRepository
-     */
     public function __construct(
         MerchantStorageToEventBehaviorFacadeInterface $eventBehaviorFacade,
         MerchantStorageToMerchantFacadeInterface $merchantFacade,
@@ -143,12 +136,6 @@ class MerchantStorageWriter implements MerchantStorageWriterInterface
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantTransfer $merchantTransfer
-     * @param \Generated\Shared\Transfer\StoreTransfer $storeTransfer
-     *
-     * @return bool
-     */
     protected function isMerchantAvailableInStore(MerchantTransfer $merchantTransfer, StoreTransfer $storeTransfer): bool
     {
         foreach ($merchantTransfer->getStoreRelation()->getStores() as $merchantStoreTransfer) {
@@ -160,12 +147,6 @@ class MerchantStorageWriter implements MerchantStorageWriterInterface
         return false;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantTransfer $merchantTransfer
-     * @param \Generated\Shared\Transfer\MerchantStorageTransfer $merchantStorageTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantStorageTransfer
-     */
     protected function mapMerchantTransferToStorageTransfer(
         MerchantTransfer $merchantTransfer,
         MerchantStorageTransfer $merchantStorageTransfer

@@ -12,19 +12,7 @@ use Generated\Shared\Transfer\StoreTransfer;
 
 interface MerchantStorageEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\MerchantStorageTransfer $merchantStorageTransfer
-     * @param \Generated\Shared\Transfer\StoreTransfer $storeTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantStorageTransfer
-     */
     public function saveMerchantStorage(MerchantStorageTransfer $merchantStorageTransfer, StoreTransfer $storeTransfer): MerchantStorageTransfer;
 
-    /**
-     * @param int $idMerchant
-     * @param string $storeName
-     *
-     * @return void
-     */
     public function deleteMerchantStorage(int $idMerchant, string $storeName): void;
 }

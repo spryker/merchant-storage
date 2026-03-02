@@ -32,11 +32,6 @@ class UrlStorageMerchantMapper implements UrlStorageMerchantMapperInterface
      */
     protected $storeClient;
 
-    /**
-     * @param \Spryker\Client\MerchantStorage\Dependency\Service\MerchantStorageToSynchronizationServiceInterface $synchronizationService
-     * @param \Spryker\Client\MerchantStorage\Dependency\Client\MerchantStorageToStorageClientInterface $storageClient
-     * @param \Spryker\Client\MerchantStorage\Dependency\Client\MerchantStorageToStoreClientInterface $storeClient
-     */
     public function __construct(
         MerchantStorageToSynchronizationServiceInterface $synchronizationService,
         MerchantStorageToStorageClientInterface $storageClient,
@@ -47,11 +42,6 @@ class UrlStorageMerchantMapper implements UrlStorageMerchantMapperInterface
         $this->storeClient = $storeClient;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\UrlStorageTransfer $urlStorageTransfer
-     *
-     * @return \Generated\Shared\Transfer\UrlStorageResourceMapTransfer
-     */
     public function mapUrlStorageTransferToUrlStorageResourceMapTransfer(UrlStorageTransfer $urlStorageTransfer): UrlStorageResourceMapTransfer
     {
         $urlStorageResourceMapTransfer = new UrlStorageResourceMapTransfer();
@@ -68,11 +58,6 @@ class UrlStorageMerchantMapper implements UrlStorageMerchantMapperInterface
         return $urlStorageResourceMapTransfer;
     }
 
-    /**
-     * @param string $reference
-     *
-     * @return string
-     */
     protected function generateKey(string $reference): string
     {
         $synchronizationDataTransfer = new SynchronizationDataTransfer();
