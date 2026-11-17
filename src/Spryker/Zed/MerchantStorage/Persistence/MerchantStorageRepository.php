@@ -85,7 +85,6 @@ class MerchantStorageRepository extends AbstractRepository implements MerchantSt
             ->orderByIdMerchantStorage()
             ->limit($limit)
             ->offset($offset);
-        $sitemapUrlTransfers = [];
         $merchantStorageMapper = $this->getFactory()->createMerchantStorageMapper();
 
         do {
